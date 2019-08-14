@@ -395,5 +395,13 @@ template {
   line-height: 1;
   letter-spacing: -0.05em;
 }
+.control[data-v-2f7ac9] {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.control > select[data-v-2f7ac9] {
+  font-size: 2rem;
+}
 
 /*# sourceMappingURL=/app.e31bb0bc.css.map */

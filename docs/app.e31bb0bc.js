@@ -21742,11 +21742,57 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
-      books: _books.default
+      books: _books.default,
+      sortOrder: ''
     };
+  },
+  computed: {
+    sortBooks: function sortBooks() {
+      if (this.sortOrder == 'A-Z') {
+        return this.books.sort(function (a, b) {
+          if (a.name < b.name) return -1;
+          if (a.name > b.name) return 1;
+          return 0;
+        });
+      }
+
+      if (this.sortOrder == 'Z-A') {
+        return this.books.sort(function (a, b) {
+          if (a.name < b.name) return 1;
+          if (a.name > b.name) return -1;
+          return 0;
+        });
+      }
+
+      return this.books.sort(function (a, b) {
+        if (a.id < b.id) return -1;
+        if (a.id > b.id) return 1;
+        return 0;
+      });
+    }
   }
 };
 exports.default = _default;
@@ -21762,18 +21808,60 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "shelf" },
-    _vm._l(_vm.books, function(book) {
-      return _c("div", { key: book, staticClass: "shelf__item" }, [
-        _c("img", { attrs: { src: book.image, alt: "" } }),
-        _vm._v(" "),
-        _c("span", [_vm._v(_vm._s(book.name))])
-      ])
-    }),
-    0
-  )
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "shelf" },
+      _vm._l(_vm.sortBooks, function(book) {
+        return _c("div", { key: book, staticClass: "shelf__item" }, [
+          _c("img", { attrs: { src: book.image, alt: "" } }),
+          _vm._v(" "),
+          _c("span", [_vm._v(_vm._s(book.name))])
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "control" }, [
+      _c(
+        "select",
+        {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.sortOrder,
+              expression: "sortOrder"
+            }
+          ],
+          on: {
+            change: function($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function(o) {
+                  return o.selected
+                })
+                .map(function(o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.sortOrder = $event.target.multiple
+                ? $$selectedVal
+                : $$selectedVal[0]
+            }
+          }
+        },
+        [
+          _c("option", { attrs: { value: "", selected: "" } }, [
+            _vm._v("Sort")
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "A-Z" } }, [_vm._v("A→Z")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "Z-A" } }, [_vm._v("Z←A")])
+        ]
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -21855,7 +21943,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56325" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49756" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
