@@ -1,6 +1,9 @@
 {
   "name": "books.shikakun.com",
   "private": true,
+  "scripts": {
+    "start": "parcel app/index.html -d docs"
+  },
   "dependencies": {
     "vue": "^2.6.10"
   },
