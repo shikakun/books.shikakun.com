@@ -1,4 +1,5 @@
 import Vue from 'vue/dist/vue';
+import './style.scss';
 import Books from './Books.vue';
 
 document.addEventListener('DOMContentLoaded', () => {
