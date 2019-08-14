@@ -1,11 +1,11 @@
 import Vue from 'vue/dist/vue';
-import Example from './Example.vue';
+import Books from './Books.vue';
 
 document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el: '#app',
     render: (createElement) => {
-      return createElement(Example)
+      return createElement(Books)
     }
   });
 });

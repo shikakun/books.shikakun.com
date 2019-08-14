@@ -12065,6 +12065,20 @@ var global = arguments[3];
 
 }));
 
+},{}],"books.json":[function(require,module,exports) {
+module.exports = [{
+  "id": 1,
+  "image": "9784047347762_0_m.jpg",
+  "name": "A子さんの恋人 4巻 (ハルタコミックス)"
+}, {
+  "id": 2,
+  "image": "9784873117805_0_m.jpg",
+  "name": "デザインスプリント ―プロダクトを成功に導く短期集中実践ガイド"
+}, {
+  "id": 3,
+  "image": "9784861008634_0_m.jpg",
+  "name": "GIF BOOK -コンテンツ制作者のためのGIFガイド"
+}];
 },{}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
 var Vue // late bind
 var version
@@ -20763,13 +20777,22 @@ if (inBrowser) {
 
 var _default = Vue;
 exports.default = _default;
-},{}],"Example.vue":[function(require,module,exports) {
+},{}],"Books.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _books = _interopRequireDefault(require("./books.json"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
 //
 //
 //
@@ -20777,24 +20800,30 @@ exports.default = void 0;
 var _default = {
   data: function data() {
     return {
-      example: 'Yo'
+      books: _books.default
     };
   }
 };
 exports.default = _default;
-        var $eb349f = exports.default || module.exports;
+        var $2f7ac9 = exports.default || module.exports;
       
-      if (typeof $eb349f === 'function') {
-        $eb349f = $eb349f.options;
+      if (typeof $2f7ac9 === 'function') {
+        $2f7ac9 = $2f7ac9.options;
       }
     
         /* template */
-        Object.assign($eb349f, (function () {
+        Object.assign($2f7ac9, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("p", [_vm._v(_vm._s(_vm.example))])
+  return _c(
+    "ul",
+    _vm._l(_vm.books, function(book) {
+      return _c("li", { key: book }, [_c("span", [_vm._v(_vm._s(book.name))])])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -20816,21 +20845,21 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$eb349f', $eb349f);
+            api.createRecord('$2f7ac9', $2f7ac9);
           } else {
-            api.reload('$eb349f', $eb349f);
+            api.reload('$2f7ac9', $2f7ac9);
           }
         }
 
         
       }
     })();
-},{"vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"index.js":[function(require,module,exports) {
+},{"./books.json":"books.json","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue/dist/vue"));
 
-var _Example = _interopRequireDefault(require("./Example.vue"));
+var _Books = _interopRequireDefault(require("./Books.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20838,11 +20867,11 @@ document.addEventListener('DOMContentLoaded', function () {
   new _vue.default({
     el: '#app',
     render: function render(createElement) {
-      return createElement(_Example.default);
+      return createElement(_Books.default);
     }
   });
 });
-},{"vue/dist/vue":"../node_modules/vue/dist/vue.js","./Example.vue":"Example.vue"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue/dist/vue":"../node_modules/vue/dist/vue.js","./Books.vue":"Books.vue"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -20870,7 +20899,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53420" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54501" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
