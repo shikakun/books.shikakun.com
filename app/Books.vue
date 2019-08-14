@@ -72,7 +72,8 @@
 </style>
 
 <script>
-import books from './books.json'
+import books from './books.json';
+import _ from 'lodash';
 
 export default {
   data() {
@@ -84,25 +85,13 @@ export default {
   computed: {
     sortBooks: function () {
       if (this.sortOrder == 'A-Z') {
-        return this.books.sort(function(a, b) {
-          if(a.name < b.name) return -1;
-          if(a.name > b.name) return 1;
-          return 0;
-        });
+        return _.orderBy(this.books, ['name'], ['asc']);
       }
       if (this.sortOrder == 'Z-A') {
-        return this.books.sort(function(a, b) {
-          if(a.name < b.name) return 1;
-          if(a.name > b.name) return -1;
-          return 0;
-        });
+        return _.orderBy(this.books, ['name'], ['desc']);
       }
 
-      return this.books.sort(function(a, b) {
-        if(a.id < b.id) return -1;
-        if(a.id > b.id) return 1;
-        return 0;
-      });
+      return _.orderBy(this.books, ['id'], ['asc']);
     }
   }
 }
