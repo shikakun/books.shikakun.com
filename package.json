@@ -5,13 +5,16 @@
     "start": "parcel app/index.html -d docs"
   },
   "dependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@vue/component-compiler-utils": "^3.0.0",
     "parcel-bundler": "^1.12.3",
-    "parcel-plugin-bundle-manifest": "^0.2.0"
+    "parcel-plugin-bundle-manifest": "^0.2.0",
+    "vue-template-compiler": "^2.6.10"
   }
 }
