@@ -1,16 +1,16 @@
-<style scoped>
+<style lang="scss" scoped>
 .shelf {
   display: flex;
   flex-wrap: wrap;
 }
 
 .shelf__item {
-  width: 50%;
-}
+  width: (100% / 2);
 
-.shelf__item > img {
-  display: block;
-  width: 100%;
+  > img {
+    display: block;
+    width: 100%;
+  }
 }
 </style>
 
