@@ -12137,6 +12137,9 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
+module.exports = {
+  "example": "_example_38ecb"
+};
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"books.json":[function(require,module,exports) {
 module.exports = [{
   "id": 1,
@@ -20978,7 +20981,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55674" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56193" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
