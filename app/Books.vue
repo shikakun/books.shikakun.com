@@ -1,10 +1,26 @@
+<style scoped>
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shelf__item {
+  width: 50%;
+}
+
+.shelf__item > img {
+  display: block;
+  width: 100%;
+}
+</style>
+
 <template>
-  <ul>
-    <li v-for="book in books" :key="book">
+  <div class="shelf">
+    <div class="shelf__item" v-for="book in books" :key="book">
       <img :src="book.image" alt="">
       <span>{{ book.name }}</span>
-    </li>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <script>

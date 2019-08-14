@@ -12137,9 +12137,6 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-module.exports = {
-  "example": "_example_38ecb"
-};
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"books.json":[function(require,module,exports) {
 module.exports = [{
   "id": 1,
@@ -20873,6 +20870,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -20894,9 +20907,10 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "ul",
+    "div",
+    { staticClass: "shelf" },
     _vm._l(_vm.books, function(book) {
-      return _c("li", { key: book }, [
+      return _c("div", { key: book, staticClass: "shelf__item" }, [
         _c("img", { attrs: { src: book.image, alt: "" } }),
         _vm._v(" "),
         _c("span", [_vm._v(_vm._s(book.name))])
@@ -20912,7 +20926,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-2f7ac9",
             functional: undefined
           };
         })());
@@ -20932,9 +20946,13 @@ render._withStripped = true
         }
 
         
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
       }
     })();
-},{"./books.json":"books.json","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"index.js":[function(require,module,exports) {
+},{"./books.json":"books.json","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue/dist/vue"));
@@ -20981,7 +20999,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56193" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56325" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
