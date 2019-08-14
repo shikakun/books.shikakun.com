@@ -1,6 +1,7 @@
 <template>
   <ul>
-    <li v-for="book in books" v-bind:key="book">
+    <li v-for="book in books" :key="book">
+      <img :src="book.image" alt="">
       <span>{{ book.name }}</span>
     </li>
   </ul>

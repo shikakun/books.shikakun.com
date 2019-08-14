@@ -12068,15 +12068,15 @@ var global = arguments[3];
 },{}],"books.json":[function(require,module,exports) {
 module.exports = [{
   "id": 1,
-  "image": "9784047347762_0_m.jpg",
+  "image": "./images/9784047347762_0_m.jpg",
   "name": "A子さんの恋人 4巻 (ハルタコミックス)"
 }, {
   "id": 2,
-  "image": "9784873117805_0_m.jpg",
+  "image": "./images/9784873117805_0_m.jpg",
   "name": "デザインスプリント ―プロダクトを成功に導く短期集中実践ガイド"
 }, {
   "id": 3,
-  "image": "9784861008634_0_m.jpg",
+  "image": "./images/9784861008634_0_m.jpg",
   "name": "GIF BOOK -コンテンツ制作者のためのGIFガイド"
 }];
 },{}],"../node_modules/vue-hot-reload-api/dist/index.js":[function(require,module,exports) {
@@ -20797,6 +20797,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 var _default = {
   data: function data() {
     return {
@@ -20820,7 +20821,11 @@ exports.default = _default;
   return _c(
     "ul",
     _vm._l(_vm.books, function(book) {
-      return _c("li", { key: book }, [_c("span", [_vm._v(_vm._s(book.name))])])
+      return _c("li", { key: book }, [
+        _c("img", { attrs: { src: book.image, alt: "" } }),
+        _vm._v(" "),
+        _c("span", [_vm._v(_vm._s(book.name))])
+      ])
     }),
     0
   )
@@ -20899,7 +20904,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54501" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54593" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
